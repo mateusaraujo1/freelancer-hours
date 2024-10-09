@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('avatar')->nullable();
+            $table->unsignedTinyInteger('rating')->default(0);
+            // int muito pequeno, unsigned = sem negativos, tiny = 1 byte
             $table->timestamps();
         });
 
